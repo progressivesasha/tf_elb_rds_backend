@@ -45,8 +45,8 @@ data "template_file" "backendnode_config" {
 }
 
 data "template_cloudinit_config" "puppetserver_config" {
-	gzip          	 = true
-	base64_encode 	 = true
+	gzip          	 = false
+	base64_encode 	 = false
 	part {
 		filename	 	 = "initial.sh"
 		content_type = "text/x-shellscript"
@@ -60,8 +60,8 @@ data "template_cloudinit_config" "puppetserver_config" {
 }
 
 data "template_cloudinit_config" "backendnode_config" {
-	gzip          	 = true
-	base64_encode 	 = true
+	gzip          	 = false
+	base64_encode 	 = false
 	part {
 		filename	 	 = "initial.sh"
 		content_type = "text/x-shellscript"
