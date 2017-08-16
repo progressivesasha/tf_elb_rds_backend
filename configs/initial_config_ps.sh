@@ -17,7 +17,6 @@ systemctl restart puppetserver
 systemctl enable puppetserver
 mkdir /etc/puppetlabs/puppetserver/ssh/
 ssh-keygen -t rsa -f /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa -N ''
-curl -u ":" --data '{"title":"puppetserver-key","key":""`cat /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa.pub`""}' https://api.github.com/users/progressivesasha/keys
 gem install puppet_forge:2.2.6 r10k -y
 gem install r10k -y
 mkdir -p /etc/puppetlabs/r10k/
