@@ -1,7 +1,7 @@
 provider "aws" {
   profile = "default"
   assume_role {
-    role_arn = "arn:aws:iam::418205177196:role/terraform-test-role"
+    role_arn = "arn:aws:iam::${var.aws_acc_id}:role/terraform-test-role"
   }
 }
 

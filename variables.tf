@@ -19,3 +19,4 @@ variable "db_passwd" {default = "1346798520qwe"}
 variable "puppet_environment" {default = "production"}
 variable "git_username" {default = ""}
 variable "git_passwd" {default = ""}
+variable "aws_acc_id" {default = ""}
