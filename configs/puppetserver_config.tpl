@@ -13,7 +13,7 @@ runcmd:
   - "yum -y install rubygems"
   - "yum -y install git"
   - "sed '/JAVA_ARGS/s/-Xms2g -Xmx2g/-Xms512m -Xmx512m/' /etc/sysconfig/puppetserver > /tmp/reserve.conf"
-  - "echo "y" | cp /tmp/reserve.conf /etc/sysconfig/puppetserver"
+  - "echo 'y' | cp /tmp/reserve.conf /etc/sysconfig/puppetserver"
   - "systemctl restart puppetserver"
   - "systemctl enable puppetserver"
   - "mkdir /etc/puppetlabs/puppetserver/ssh/"
@@ -46,18 +46,18 @@ write_files:
           User progressivesasha
     path: /root/.ssh/config
     permissions: "0644"
-    -
-      content: |
-          [main]
-          environmentpath = $codedir/environments
-          [master]
-          vardir = /opt/puppetlabs/server/data/puppetserver
-          logdir = /var/log/puppetlabs/puppetserver
-          rundir = /var/run/puppetlabs/puppetserver
-          pidfile = /var/run/puppetlabs/puppetserver/puppetserver.pid
-          codedir = /etc/puppetlabs/code
-          dns_alt_names = puppet-master.example.com,puppet,puppet-master
-      path: /etc/puppetlabs/puppet/puppet.conf
+  -
+    content: |
+        [main]
+        environmentpath = $codedir/environments
+        [master]
+        vardir = /opt/puppetlabs/server/data/puppetserver
+        logdir = /var/log/puppetlabs/puppetserver
+        rundir = /var/run/puppetlabs/puppetserver
+        pidfile = /var/run/puppetlabs/puppetserver/puppetserver.pid
+        codedir = /etc/puppetlabs/code
+        dns_alt_names = puppet-master.example.com,puppet,puppet-master
+    path: /etc/puppetlabs/puppet/puppet.conf
 
 output:
   all: "| tee -a /var/log/cloud-init-output.log"
