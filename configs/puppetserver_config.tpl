@@ -2,6 +2,7 @@
 
 package_upgrade: true
 runcmd:
+  - "rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-10.noarch.rpm"
   - "touch /tmp/reserve.conf"
   - "dd if=/dev/xvda2 of=/var/myswap bs=1M count=1024"
   - "mkswap /var/myswap"
@@ -59,4 +60,4 @@ write_files:
       path: /etc/puppetlabs/puppet/puppet.conf
 
 output:
-  all: "| tee -a /var/log/cloud-init-output1.log"
+  all: "| tee -a /var/log/cloud-init-output.log"

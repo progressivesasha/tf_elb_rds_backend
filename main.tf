@@ -44,20 +44,20 @@ data "template_file" "backendnode_config" {
 	}
 }
 
-data "template_cloudinit_config" "puppetserver_config" {
-	gzip          	 = false
-	base64_encode 	 = true
-	part {
-		filename	 	 = "initial.sh"
-		content_type = "text/x-shellscript"
-		content      = "${data.template_file.initial_config.rendered}"
-	}
-	part {
-		filename     = "/tmp/puppetserver_config.cfg"
-		content_type = "text/cloud-config"
-		content      = "${data.template_file.puppetserver_config.rendered}"
-	}
-}
+#data "template_cloudinit_config" "puppetserver_config" {
+#	gzip          	 = false
+#	base64_encode 	 = true
+#	part {
+#		filename	 	 = "initial.sh"
+#		content_type = "text/x-shellscript"
+#		content      = "${data.template_file.initial_config.rendered}"
+#	}
+#	part {
+#		filename     = "/tmp/puppetserver_config.cfg"
+#		content_type = "text/cloud-config"
+#		content      = "${data.template_file.puppetserver_config.rendered}"
+#	}
+#}
 
 data "template_cloudinit_config" "backendnode_config" {
 	gzip          	 = false
