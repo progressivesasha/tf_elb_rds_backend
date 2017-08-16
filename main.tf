@@ -36,10 +36,6 @@ data "template_file" "initial_config" {
 	template = "${file("${path.module}/configs/initial_config.sh")}"
 }
 
-data "template_file" "initial_config_ps" {
-	template = "${file("${path.module}/configs/initial_config_ps.sh")}"
-}
-
 data "template_file" "backendnode_config" {
 	template = "${file("${path.module}/configs/backendnode_config.tpl")}"
 	vars {
@@ -54,7 +50,7 @@ data "template_cloudinit_config" "puppetserver_config" {
 	part {
 		filename	 	 = "initial.sh"
 		content_type = "text/x-shellscript"
-		content      = "${data.template_file.initial_config_ps.rendered}"
+		content      = "${data.template_file.initial_config.rendered}"
 	}
 	part {
 		filename     = "puppetserver_config.cfg"
