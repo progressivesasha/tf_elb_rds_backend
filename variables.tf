@@ -19,4 +19,5 @@ variable "db_passwd" {default = ""}
 variable "puppet_environment" {default = ""}
 variable "git_username" {default = ""}
 variable "git_passwd" {default = ""}
+variable "git_token" {default = ""}
 variable "aws_acc_id" {default = ""}

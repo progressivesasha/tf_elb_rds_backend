@@ -26,8 +26,7 @@ resource "aws_default_vpc" "default" {
 data "template_file" "puppetserver_config" {
 	template = "${file("${path.module}/configs/puppetserver_config.tpl")}"
 	vars {
-		git_username = "${var.git_username}"
-		git_passwd = "${var.git_passwd}"
+		git_token = "$var.git_token"
 	}
 }
 
