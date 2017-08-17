@@ -31,8 +31,8 @@ resource "aws_security_group" "asg_sg" {
 		cidr_blocks	= ["89.162.139.0/24"]
 	}
 	ingress {
-		from_port 			= 8080
-		to_port					= 8080
+		from_port 			= 80
+		to_port					= 80
 		protocol 				= "tcp"
 		security_groups	= ["${aws_security_group.elb_sg.id}"]
 	}
