@@ -19,7 +19,7 @@ runcmd:
   - "mkdir /etc/puppetlabs/puppetserver/ssh/"
   - "ssh-keygen -t rsa -f /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa -N ''"
   - "gem install puppet_forge:2.2.6 r10k > /tmp/r10k-install"
-  - "gem install r10k"
+  - "gem install r10k >> /tmp/r10k-install"
   - "mkdir -p /etc/puppetlabs/r10k/"
   - "curl -o /etc/puppetlabs/r10k/r10k.yaml https://s3.amazonaws.com/cf-templates-bbjiwikzqopr-us-east-1/configs/r10k.yaml"
   - "gem install hiera-eyaml"
