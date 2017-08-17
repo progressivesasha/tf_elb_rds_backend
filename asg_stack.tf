@@ -7,8 +7,8 @@ resource "aws_autoscaling_group" "asg" {
 	launch_configuration 			= "${aws_launch_configuration.asglc.name}"
 	load_balancers		 				= ["${aws_elb.balancer.name}"]
 	availability_zones			  = ["${var.av_zones}a", "${var.av_zones}b"]
-	health_check_type	 				= "EC2"
-	health_check_grace_period = "300"
+	health_check_type	 				= "ELB"
+	health_check_grace_period = "1200"
 	tags = [
 		{
 			key   							= "Name"
