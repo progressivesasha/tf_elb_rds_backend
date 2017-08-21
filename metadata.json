@@ -1,0 +1,14 @@
+{
+  "name": "progressivesasha-create_user",
+  "version": "0.1.0",
+  "author": "progressivesasha",
+  "summary": "puppet module for creating local users",
+  "license": "Apache 2.0",
+  "source": "",
+  "project_page": null,
+  "issues_url": null,
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
